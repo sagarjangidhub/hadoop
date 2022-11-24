@@ -1,0 +1,55 @@
+###hADOOP
+
+sudo yum install update -y
+sudo yum install wget -y
+sudo yum install nano -y
+sudo yum install httpd -y
+sudo yum install python 3.6 -y
+sudo yum install zip -y
+sudo yum install bind-utils
+sudo yum install unzip -y
+
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/check-pre-req.sh 
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/disable_iptables.sh 
+sudo sh disable_iptables.sh 
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/disable_ipv6.sh 
+sudo sh disable_ipv6.sh
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/disable_selinux.sh 
+sudo sh disable_selinux.sh 
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/disable_thp.sh 
+sudo sh disable_thp.sh 
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/install_lzo.sh 
+sudo sh install_lzo.sh 
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/install_nscd.sh 
+sudo sh install_nscd.sh
+
+wget https://access.redhat.com/solutions/1489
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/install_ntp.sh
+sudo sh install_ntp.sh
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/install_tools.sh
+sudo sh install_tools.sh
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/remove_tuned.sh
+sudo sh remove_tuned.sh
+
+wget https://s3.amazonaws.com/cloud-age/MIT_kerberos/prerequisite/tune_kernel.sh
+sudo sh tune_kernel.sh
+
+sudo sysctl vm.swappiness=1
+
+
+
+sudo chkconfig httpd on
+
+sudo service httpd start
+
+sudo service httpd status
